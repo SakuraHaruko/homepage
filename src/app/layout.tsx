@@ -45,7 +45,7 @@ export default function RootLayout({
             <div className="max-w-xl mx-auto px-6 py-14 md:py-20 lg:px-12 flex-1 w-full">
               {children}
             </div>
-            <footer className="max-w-xl mx-auto px-6 pb-20 lg:pb-6 lg:px-12 text-center text-xs text-text-faint leading-relaxed shrink-0">
+            <footer className="lg:hidden max-w-xl mx-auto px-6 pb-20 lg:px-12 text-center text-xs text-text-faint leading-relaxed shrink-0">
               <div className="h-px bg-divider mb-4" />
               <p>&copy; 2026 Sakura &amp; NekoCafe Network. All rights reserved.</p>
               <p>Powered by ❤️ from my friends.</p>

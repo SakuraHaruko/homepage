@@ -19,11 +19,11 @@ export default function Sidebar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <aside className="w-64 shrink-0 flex items-center justify-center pr-12 max-lg:hidden">
-      <div className="w-44">
+    <aside className="w-72 shrink-0 flex items-center justify-center pr-12 max-lg:hidden">
+      <div className="w-52">
         {/* Avatar + Name */}
         <Link href="/" className="block w-full py-5 flex flex-col items-center gap-3">
-          <div className="w-16 h-16 rounded-full border-2 border-accent-pink/30 overflow-hidden">
+          <div className="w-20 h-20 rounded-full border-2 border-accent-pink/30 overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="https://profile-content.s4a.moe/profile-avatar.jpg" alt="Sakura" className="w-full h-full object-cover" />
           </div>
@@ -58,6 +58,17 @@ export default function Sidebar() {
           <WeatherWidget />
           <span className="text-text-faint/30">·</span>
           <ThemeToggle />
+        </div>
+
+        {/* Footer */}
+        <div className="pt-2 pb-1 text-center text-[10px] text-text-faint leading-relaxed">
+          <p>&copy; 2026 Sakura &amp; NekoCafe Network.</p>
+          <p>Powered by ❤️ from my friends.</p>
+          <p className="mt-0.5">
+            <a href="https://icp.gov.moe/?keyword=20220772" target="_blank" rel="noopener noreferrer" className="wavy">
+              萌ICP备20220772号
+            </a>
+          </p>
         </div>
       </div>
     </aside>
