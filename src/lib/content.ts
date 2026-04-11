@@ -19,6 +19,7 @@ export interface Friend {
 
 export interface GalleryItem {
   url: string;
+  original_url?: string;
   desc: string;
 }
 
