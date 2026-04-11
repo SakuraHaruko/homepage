@@ -15,7 +15,7 @@ export default function BlogPage() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-5">📝 记事本</h2>
+      <h2 className="text-xl font-semibold mb-5">📝 博客</h2>
       {posts.length === 0 ? (
         <Loading />
       ) : (

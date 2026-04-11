@@ -14,7 +14,7 @@ export default function FriendsPage() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-5">💕 好朋友</h2>
+      <h2 className="text-xl font-semibold mb-5">💕 好朋友们</h2>
       {friends.length === 0 ? (
         <Loading />
       ) : (
