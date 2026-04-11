@@ -6,9 +6,9 @@ import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { href: "/", zh: "关于" },
-  { href: "/blog", zh: "记事本" },
+  { href: "/blog", zh: "博客" },
   { href: "/gallery", zh: "相册" },
-  { href: "/friends", zh: "好朋友" },
+  { href: "/friends", zh: "好朋友们" },
 ];
 
 export default function MobileNav() {

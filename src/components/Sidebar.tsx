@@ -7,9 +7,9 @@ import WeatherWidget from "./WeatherWidget";
 
 const navItems = [
   { href: "/", zh: "关于", en: "About" },
-  { href: "/blog", zh: "记事本", en: "Blog" },
+  { href: "/blog", zh: "博客", en: "Blog" },
   { href: "/gallery", zh: "相册", en: "Gallery" },
-  { href: "/friends", zh: "好朋友", en: "Friends" },
+  { href: "/friends", zh: "好朋友们", en: "Friends" },
 ];
 
 export default function Sidebar() {
