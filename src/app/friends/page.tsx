@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchFriends } from "@/lib/content";
+import { fetchFriendsRandom } from "@/lib/content";
 import type { Friend } from "@/lib/content";
 import Loading from "@/components/Loading";
 
@@ -9,7 +9,7 @@ export default function FriendsPage() {
   const [friends, setFriends] = useState<Friend[]>([]);
 
   useEffect(() => {
-    fetchFriends().then(setFriends);
+    fetchFriendsRandom().then(setFriends);
   }, []);
 
   return (
@@ -39,7 +39,7 @@ export default function FriendsPage() {
           ))}
         </div>
       )}
-      <p className="text-text-faint text-sm mt-8">Want to be here? Reach out! 💌</p>
+      <p className="text-text-faint text-sm mt-8">补充中...</p>
     </div>
   );
 }

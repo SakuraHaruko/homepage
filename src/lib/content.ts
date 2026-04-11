@@ -61,6 +61,16 @@ export function fetchFriends(): Promise<Friend[]> {
   });
 }
 
+export async function fetchFriendsRandom(): Promise<Friend[]> {
+  const res = await fetch(`${BASE}/friends.json`);
+  const list: Friend[] = res.ok ? await (res.json() as Promise<Friend[]>) : [];
+  for (let i = list.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [list[i], list[j]] = [list[j], list[i]];
+  }
+  return list;
+}
+
 export function fetchGallery(): Promise<GalleryItem[]> {
   return cached("gallery", async () => {
     const res = await fetch(`${BASE}/gallery.json`);
@@ -75,6 +85,5 @@ export function prefetchAll(): void {
   prefetched = true;
   fetchAbout();
   fetchBlogList();
-  fetchFriends();
   fetchGallery();
 }
