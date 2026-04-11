@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+  --bg: #FBF7F0;
+  --text: #5C4B3A;
+  --text-sub: #8B7B6B;
+  --text-faint: #C4B5A5;
+  --accent: #D4896A;
+  --accent-pink: #E8A0BF;
+  --dot-active: #D4896A;
+  --dot-idle: #DDD5C9;
+  --divider: #E8E0D4;
+  --code-bg: #F0EBE3;
+  --tag-bg: #EDE6DA;
+  --tag-text: #8B7B6B;
+}
+
+[data-theme="dark"] {
+  --bg: #1C1917;
+  --text: #E7DDD0;
+  --text-sub: #A89888;
+  --text-faint: #5C5248;
+  --accent: #E8A87C;
+  --accent-pink: #E8A0BF;
+  --dot-active: #E8A87C;
+  --dot-idle: #3A332C;
+  --divider: #2D2822;
+  --code-bg: #2A2520;
+  --tag-bg: #2A2520;
+  --tag-text: #A89888;
 }
 
 @theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-text-sub: var(--text-sub);
+  --color-text-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-pink: var(--accent-pink);
+  --color-dot-active: var(--dot-active);
+  --color-dot-idle: var(--dot-idle);
+  --color-divider: var(--divider);
+  --color-code-bg: var(--code-bg);
+  --color-tag-bg: var(--tag-bg);
+  --color-tag-text: var(--tag-text);
+  --font-sans: var(--font-noto-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
-}
+html { scroll-behavior: smooth; }
 
 body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+::selection { background: color-mix(in srgb, var(--accent-pink) 25%, transparent); }
+
+::-webkit-scrollbar { width: 0; }
+
+a.wavy {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* Markdown - use layer to override Tailwind preflight reset */
+@layer components {
+  .md h1 { font-size: 1.5rem !important; font-weight: 700 !important; margin: 1.8rem 0 .6rem !important; line-height: 1.4; }
+  .md h2 { font-size: 1.2rem !important; font-weight: 600 !important; margin: 1.5rem 0 .5rem !important; line-height: 1.4; }
+  .md h3 { font-size: 1.05rem !important; font-weight: 600 !important; margin: 1.2rem 0 .4rem !important; line-height: 1.4; }
+  .md h4 { font-size: 1rem !important; font-weight: 600 !important; margin: 1rem 0 .3rem !important; }
+  .md p { margin: .5rem 0; line-height: 1.9; color: var(--text-sub); }
+  .md ul, .md ol { margin: .4rem 0; padding-left: 1.4rem; color: var(--text-sub); list-style: revert !important; }
+  .md li { margin: .2rem 0; line-height: 1.8; }
+  .md code { background: var(--code-bg); padding: .1rem .3rem; border-radius: 3px; font-size: .88em; font-family: var(--font-mono), monospace; }
+  .md pre { background: var(--code-bg); padding: 1rem; border-radius: 6px; overflow-x: auto; margin: .8rem 0; }
+  .md pre code { background: none; padding: 0; }
+  .md blockquote { border-left: 2px solid var(--accent-pink); padding-left: 1rem; margin: .8rem 0; color: var(--text-faint); font-style: italic; }
+  .md a { color: var(--accent); text-decoration: underline wavy; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .md img { border-radius: 6px; max-width: 100%; }
+  .md hr { border: none; border-top: 1px solid var(--divider); margin: 1.5rem 0; }
+  .md table { border-collapse: collapse; width: 100%; margin: .8rem 0; font-size: .92em; }
+  .md th, .md td { border: 1px solid var(--divider); padding: .4rem .6rem; text-align: left; }
+  .md th { background: var(--code-bg); font-weight: 600; }
 }
